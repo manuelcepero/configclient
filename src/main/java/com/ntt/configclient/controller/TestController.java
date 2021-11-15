@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     
 	@Value("${some.value}")
-	private String myvalue;
+	private String myValue;
 	
-	@GetMapping(path = "/myvalue")
+	@GetMapping(path = "/myValue")
 	public String myValue() {
-		return this.myvalue;
+		return this.myValue;
 	}
 }
