@@ -6,12 +6,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
-    
-	@Value("${some.value}")
-	private String myValue;
-	
-	@GetMapping(path = "/myValue")
-	public String myValue() {
-		return this.myValue;
-	}
+
+    @Value("${some.value}")
+    private String myValue;
+
+    @Value("${spring.profiles.active}")
+    private String activeProfile;
+
+    @GetMapping(path = "/myValue")
+    public String myValue() {
+        return this.myValue + " con el perfil de " + activeProfile;
+    }
 }
